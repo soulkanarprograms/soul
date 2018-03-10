@@ -1,0 +1,51 @@
+version: '3.3'
+
+services:
+  discovery-server:
+    deploy:
+      endpoint_mode: dnsrr
+      mode: replicated
+      replicas: 1
+    image: discovery-server:latest
+    networks:
+      - backend
+    ports:
+      - "8761:8761"
+#    volumes:
+#      - /tmp
+
+#  memory-bus:
+#    image: rabbitmq:latest
+
+  config-server:
+    depends_on:
+          - "discovery-server"
+#          - "memory-bus"
+    deploy:
+      endpoint_mode: dnsrr
+      mode: replicated
+      replicas: 1
+#      update_config:
+#        parallelism: 2
+#        delay: 10s
+#      restart_policy:
+#        condition: on-failure
+    image: config-server:latest
+    networks:
+      - backend
+    ports:
+      - "8888:8888"
+
+  user-service:
+    depends_on:
+          - "config-server"
+    deploy:
+      replicas: 1
+    image: user-service:latest
+    networks:
+      - backend
+    ports:
+      - "8080:8080"
+
+networks:
+  backend:
