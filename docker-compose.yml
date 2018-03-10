@@ -17,13 +17,13 @@ services:
 #  memory-bus:
 #    image: rabbitmq:latest
 
-  confi-server:
+  config-server:
     depends_on:
           - "discovery-server"
 #          - "memory-bus"
     deploy:
-      endpoint_mode: dnsrr
-      mode: replicated
+#      endpoint_mode: dnsrr
+#      mode: replicated
       replicas: 1
 #      update_config:
 #        parallelism: 2
@@ -35,6 +35,17 @@ services:
       - backend
     ports:
       - "8888:8888"
+
+#  userservice-service:
+#    depends_on:
+#          - "config-server"
+#    deploy:
+#      replicas: 1
+#    image: userservice-service:latest
+#    networks:
+#      - backend
+#    ports:
+#      - "8080:8080"
 
 networks:
   backend:

@@ -13,10 +13,12 @@
     <description>Soulkanar project for Spring Boot</description>
 
     <modules>
-        <module>discovery</module>
+
         <!-- <module>configuration-basics</module>
         <module>configuration-client</module> -->
         <module>configuration</module>
+        <module>discovery</module>
+        <module>services</module>
         <!-- <module>configuration-it</module> -->
     </modules>
 </project>    
