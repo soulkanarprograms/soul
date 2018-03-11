@@ -4,13 +4,8 @@ eureka:
       defaultZone: http://localhost:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh, info, health    
 spring:
   application:
-    name: gateway-service
+    name: customer-service
   profiles:
       active: dev
