@@ -7,10 +7,5 @@ eureka:
 spring:
   application:
     name: user-service
-#  cloud:
-#    config:
-#      server:
-#        git:
-#          uri: https://github.com/soulkanarprograms/config-server-repository
   profiles:
       active: dev

@@ -36,12 +36,12 @@ services:
     ports:
       - "8888:8888"
 
-#  userservice-service:
+#  customerservice-service:
 #    depends_on:
 #          - "config-server"
 #    deploy:
 #      replicas: 1
-#    image: userservice-service:latest
+#    image: customerservice-service:latest
 #    networks:
 #      - backend
 #    ports:

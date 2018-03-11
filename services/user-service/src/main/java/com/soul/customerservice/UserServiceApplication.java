@@ -1,4 +1,4 @@
-package com.soul.userservice;
+package com.soul.customerservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

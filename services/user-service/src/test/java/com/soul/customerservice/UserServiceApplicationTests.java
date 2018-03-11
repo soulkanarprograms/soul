@@ -1,4 +1,4 @@
-package com.soul.userservice;
+package com.soul.customerservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

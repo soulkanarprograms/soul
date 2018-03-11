@@ -4,7 +4,7 @@ services:
   user-service:
     deploy:
       replicas: 1
-    image: userservice-service:latest
+    image: customerservice-service:latest
     networks:
       - backend
     ports:

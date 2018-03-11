@@ -1,4 +1,4 @@
-package com.soul.userservice;
+package com.soul.customerservice;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

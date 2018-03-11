@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.soul.customerservice;
+
+option java_package = "com.soul.customerservice";
+
+option java_outer_classname = "CustomerProtos";
+
+message Customer {
+    int64 id = 1;
+    string firstName = 2;
+    string lastName = 3;
+}
+
+message Customers {
+    repeated Customer customer = 1;
+}
